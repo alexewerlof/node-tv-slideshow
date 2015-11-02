@@ -1,0 +1,27 @@
+{
+  "name": "node-tv-slideshow",
+  "description": "A node project for creating a slide show for running on tv screens",
+  "main": "index.js",
+  "authors": [
+    "userpixel"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "slide-show",
+    "tv",
+    "info-screen"
+  ],
+  "homepage": "https://github.com/userpixel/node-tv-slideshow",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7"
+  }
+}
