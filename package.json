@@ -1,0 +1,28 @@
+{
+  "name": "node-tv-slideshow",
+  "version": "0.0.1",
+  "description": "A node project for creating a slide show for running on tv screens",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/userpixel/node-tv-slideshow.git"
+  },
+  "keywords": [
+    "slide-show",
+    "tv",
+    "info-screen"
+  ],
+  "author": "userpixel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/userpixel/node-tv-slideshow/issues"
+  },
+  "homepage": "https://github.com/userpixel/node-tv-slideshow#readme"
+}

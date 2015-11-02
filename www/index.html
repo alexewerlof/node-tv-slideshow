@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link rel="stylesheet" href="bower/angular/angular-csp.css">
+    <title>Node TV Slideshow</title>
   </head>
-  <body>
-    Hello!
+  <body ng-cloak ng-controller="IndexController">
+    {{foo}}
+    <script src="bower/angular/angular.min.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

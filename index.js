@@ -1,16 +1,17 @@
-var static = require('koa-static');
-var koa = require('koa');
-var route = require('koa-route');
-var app = koa();
+var express = require('express');
+var app = express();
+var fs = require('fs');
 
+app.get('/api/slides', function (req, res) {
+  fs.readdir('www/slides', function (err, files) {
+    res.send(files);
+  });
+});
 
-app.use(route.get('/ls', function *() {
-  this.body = 'yo man, this is the list of files';
-}));
+app.use('/', express.static('www'));
 
-// $ GET /hello.txt
-app.use(static('www'));
-
-app.listen(3000);
-
-console.log('listening on port 3000');
+var server = app.listen(3000, function () {
+  //var host = server.address().address;
+  var port = server.address().port;
+  console.log(`Listening at port ${port}`);
+});
