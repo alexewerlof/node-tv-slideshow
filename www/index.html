@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="bower/angular/angular-csp.css">
+    <link rel="stylesheet" href="index.css">
     <title>Node TV Slideshow</title>
   </head>
   <body ng-cloak ng-controller="IndexController">
-    {{foo}}
+    <div class="slide" ng-style="{'background-image': getCurrentSlide()}"></div>
     <script src="bower/angular/angular.min.js"></script>
     <script src="index.js"></script>
   </body>
