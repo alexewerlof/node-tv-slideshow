@@ -1,12 +1,15 @@
 var express = require('express');
 var app = express();
 var fs = require('fs');
+var db = require('./db');
 
 app.get('/api/slides', function (req, res) {
   fs.readdir('www/slides', function (err, files) {
     res.send(files);
   });
 });
+
+app.get('/api/db', db.read);
 
 app.use('/', express.static('www'));
 
