@@ -7,7 +7,10 @@
     <title>Administration</title>
   </head>
   <body ng-cloak ng-controller="AdminController">
-    <table>
+    <p>This is an extremely simple and dumb admin page without any authentication. Very very alpha ver</p>
+    <button ng-click="load()">Load</button>
+    <button ng-click="save()">Save</button>
+    <table ng-if="db">
       <tr ng-repeat="slide in db.slides">
         <td>{{slide.url}}</td>
         <td>
