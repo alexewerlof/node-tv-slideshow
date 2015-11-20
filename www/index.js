@@ -1,20 +1,26 @@
-angular.module('app', [])
+angular.module('app', ['ngAnimate'])
 .controller('IndexController', function ($scope, $http, $timeout) {
-  $http.get('/api/slides').success(function (slides) {
-    $scope.slides = slides;
-    changeSlide();
-  });
 
-  var INTERVAL = 1000;
-  var index = 0;
-  $scope.getCurrentSlide = function () {
-    return $scope.slides ? 'url(slides/' + $scope.slides[index] + ')' : '';
-  }
+  var INTERVAL = 4000;
+  $scope.index = 0;
+
   function changeSlide() {
-    index++;
-    if (index >= $scope.slides.length) {
-      index = 0;
+    if (($scope.index + 1) >= $scope.slides.length) {
+      $scope.index = 0;
+    } else {
+      $scope.index++;
     }
     $timeout(changeSlide, INTERVAL);
   }
+
+  // Refresh the whole page every 10s invalidating the cache
+  setTimeout(function () {
+    window.location.reload(true);
+  }, 10000);
+
+  $http.get('/api/db').success(function (response) {
+    $scope.slides = response.slides;
+    changeSlide();
+  });
+
 });

@@ -7,8 +7,12 @@
     <title>Node TV Slideshow</title>
   </head>
   <body ng-cloak ng-controller="IndexController">
-    <div class="slide" ng-style="{'background-image': getCurrentSlide()}"></div>
+    <div ng-repeat="slide in slides"
+         class="slide"
+         ng-show="index === $index"
+         ng-style="{'background-image': 'url(' + slide.url + ')'}"></div>
     <script src="bower/angular/angular.min.js"></script>
+    <script src="bower/angular-animate/angular-animate.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
