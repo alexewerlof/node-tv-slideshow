@@ -45,3 +45,8 @@ It runs on a cloud.
 * Put the big logo behind the body
 * Make a loading animation if necessary
 * Coffeescript/Stylus/YAML?
+
+# Business model
+
+Free: 10 slides, HD quality, no custom templates, up to 10 screens
+Paid: 100 slides, 4k quality, custom templates, up to 100 screens, mail support, custom per-screen ids.
