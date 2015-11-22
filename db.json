@@ -1,4 +1,6 @@
 {
+	"defaultInterval": 10000,
+	"refreshInterval": 3600000,
 	"slides": [
 		{
 			"type": "image",
