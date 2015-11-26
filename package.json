@@ -1,6 +1,6 @@
 {
   "name": "node-tv-slideshow",
-  "version": "0.0.1",
+  "version": "1.0.0-0",
   "description": "A node project for creating a slide show for running on tv screens",
   "main": "index.js",
   "dependencies": {

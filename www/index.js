@@ -1,28 +1,31 @@
 angular.module('app', ['ngAnimate'])
 .controller('IndexController', function ($scope, $http, $timeout) {
 
-  var INTERVAL = 4000;
+  // The default interval for all slides
+  $scope.defaultInterval = 1000;
+  // The interval for refreshing the whole page to invalidate the cache
+  $scope.refreshInterval = 60000;
   $scope.index = 0;
 
-  function changeSlide() {
+  $scope.changeSlide = function () {
     if (($scope.index + 1) >= $scope.slides.length) {
       $scope.index = 0;
     } else {
       $scope.index++;
     }
-    $timeout(changeSlide, INTERVAL);
-  }
-
-  $scope.changeSlide = changeSlide;
+    $timeout($scope.changeSlide, $scope.defaultInterval);
+  };
 
   // Refresh the whole page every 10s invalidating the cache
   setTimeout(function () {
     window.location.reload(true);
-  }, 10000);
+  }, $scope.refreshInterval);
 
   $http.get('/api/db').success(function (response) {
+    $scope.defaultInterval = response.defaultInterval;
+    $scope.refreshInterval = response.refreshInterval;
     $scope.slides = response.slides;
-    changeSlide();
+    $scope.changeSlide();
   });
 
 });

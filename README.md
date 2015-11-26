@@ -22,15 +22,15 @@ nodemon
 
 # MVP
 
-The MVP will only support a list of images.
-Delay will be the same number for all of them.
-There is no admin page. It is just a JSN file.
-The image transition is smooth.
-It should react when the data on the server changes (invalidate cache somehow).
-It runs on a cloud.
+D The MVP will only support a list of images.
+D Delay will be the same number for all of them.
+D There is no admin page. It is just a JSN file.
+D The image transition is smooth.
+D It should react when the data on the server changes (invalidate cache somehow).
 
 # Next versions:
 
+* Run on cloud
 * Security (login/helmet, etc)
 * Persistence with PouchDB
 * Admin portal
@@ -46,6 +46,7 @@ It runs on a cloud.
 * Make a loading animation if necessary
 * Coffeescript/Stylus/YAML?
 
+<<<<<<< HEAD
 # Directory structure
 
 ### Shared:
@@ -78,3 +79,9 @@ Meta:
 * Active
 * Schedule (for when to show/hide, date+time,calendar, etc.)
 * How long to show (auto = word count + defaultMin)
+=======
+# Business model
+
+Free: 10 slides, HD quality, no custom templates, up to 10 screens
+Paid: 100 slides, 4k quality, custom templates, up to 100 screens, mail support, custom per-screen ids.
+>>>>>>> fc36b7d1c121c39ea95ca6f02c143f2c0bcd0174
