@@ -46,6 +46,18 @@ It runs on a cloud.
 * Make a loading animation if necessary
 * Coffeescript/Stylus/YAML?
 
+# Directory structure
+
+### Shared:
+
+* The browser application
+* Shared templates
+
+### User based
+
+* Templates
+* Presentation
+
 # Data architecture
 
 ## Presentation
