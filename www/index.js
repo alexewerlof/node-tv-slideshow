@@ -13,6 +13,8 @@ angular.module('app', ['ngAnimate'])
     $timeout(changeSlide, INTERVAL);
   }
 
+  $scope.changeSlide = changeSlide;
+
   // Refresh the whole page every 10s invalidating the cache
   setTimeout(function () {
     window.location.reload(true);

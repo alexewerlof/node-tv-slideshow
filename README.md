@@ -45,3 +45,24 @@ It runs on a cloud.
 * Put the big logo behind the body
 * Make a loading animation if necessary
 * Coffeescript/Stylus/YAML?
+
+# Data architecture
+
+## Presentation
+
+Is a collection of slides in the order.
+
+### Slide
+
+Type:
+
+* URL
+* image
+* template + text
+* counter(date+time) + text + image
+
+Meta:
+
+* Active
+* Schedule (for when to show/hide, date+time,calendar, etc.)
+* How long to show (auto = word count + defaultMin)

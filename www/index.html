@@ -8,6 +8,7 @@
   </head>
   <body ng-cloak ng-controller="IndexController">
     <div ng-repeat="slide in slides"
+         ng-click="changeSlide()"
          class="slide"
          ng-show="index === $index"
          ng-style="{'background-image': 'url(' + slide.url + ')'}"></div>
