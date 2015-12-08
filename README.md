@@ -46,7 +46,6 @@ D It should react when the data on the server changes (invalidate cache somehow)
 * Make a loading animation if necessary
 * Coffeescript/Stylus/YAML?
 
-<<<<<<< HEAD
 # Directory structure
 
 ### Shared:
@@ -79,9 +78,8 @@ Meta:
 * Active
 * Schedule (for when to show/hide, date+time,calendar, etc.)
 * How long to show (auto = word count + defaultMin)
-=======
+
 # Business model
 
 Free: 10 slides, HD quality, no custom templates, up to 10 screens
 Paid: 100 slides, 4k quality, custom templates, up to 100 screens, mail support, custom per-screen ids.
->>>>>>> fc36b7d1c121c39ea95ca6f02c143f2c0bcd0174
