@@ -2,18 +2,20 @@
 <html ng-app="app">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="bower/angular/angular-csp.css">
+    <link rel="stylesheet" href="bower_components/angular/angular-csp.css">
     <link rel="stylesheet" href="index.css">
     <title>Node TV Slideshow</title>
   </head>
   <body ng-cloak ng-controller="IndexController">
-    <div ng-repeat="slide in slides"
+    <div ng-if="!slides">No slides {{slides}}</div>
+    <div ng-if="slides"
+         ng-repeat="slide in slides"
          ng-click="changeSlide()"
          class="slide"
          ng-show="index === $index"
-         ng-style="{'background-image': 'url(' + slide.url + ')'}"></div>
-    <script src="bower/angular/angular.min.js"></script>
-    <script src="bower/angular-animate/angular-animate.min.js"></script>
+         ng-style="{'background-image': 'url(' + slide + ')'}"></div>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>

@@ -1,5 +1,6 @@
 body {
   background-color: black;
+  color: white;
 }
 
 .slide {
@@ -8,10 +9,11 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background-size: cover;
+  background-size: contain;
   background-position: center center;
   will-change: opacity;
   transition: opacity 500ms;
+  background-repeat: no-repeat;
 }
 
 .slide.ng-hide {
