@@ -19,6 +19,16 @@ restart the server whenever the server source code changes.
 ```
 nodemon
 ```
+# Run
+
+To run the server simply:
+
+```
+node index.js --slides ../path/to/slides/folder
+```
+
+This will serve the files at the shown port.
+You can use `--port 4321` to change the port it is listening to.
 
 # MVP
 
