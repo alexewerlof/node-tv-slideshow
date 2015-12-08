@@ -4,32 +4,33 @@ var path = require('path');
 var minimist = require('minimist');
 
 var options = minimist(process.argv.slice(2), {
-	string: 'slidesRoot',
+	string: 'slides',
 	default: {
-		slidesRoot: './slides/',
+		slides: './slides/',
 		port: 3000
 	}
 });
 
-const slidesRoot = options.slidesRoot || './slides/';
-const port = options.port || 3000;
+const validFileExtensions = ['.png', '.jpg'];
 
 var app = express();
 
 app.get('/slides', function read(req, res) {
-	fs.readdir(options.slidesRoot, function (err, files) {
+	fs.readdir(options.slides, function (err, files) {
 		if (err) throw err;
-		res.send(files.map(f => path.posix.join(options.slidesRoot, f)));
+		res.send(files
+			.filter(fName => validFileExtensions.indexOf(path.extname(fName).toLowerCase()) !== -1)
+			.map(fName => '/slides/' + fName));
 	});
 });
 
 // The root of the web
 app.use(express.static('www'));
-app.use('/slides', express.static(options.slidesRoot, {
+app.use('/slides', express.static(options.slides, {
   maxAge: 60000,
   redirect: false
 }));
 app.use('/admin', express.static('admin'));
 app.use('/bower_components', express.static('bower_components'));
 
-app.listen(options.port, () => console.log(`Listening at port ${options.port}`));
+app.listen(options.port, () => console.log(`Listening at port ${options.port} and serving from ${path.resolve(options.slides)}`));
