@@ -1,5 +1,7 @@
 # Introduction
 
+*This is work in progress. Don't use.*
+
 This is very fresh (Oct 27, 2015).
 
 More info coming soon as I'm developing this for our internal use.
@@ -55,6 +57,40 @@ D It should react when the data on the server changes (invalidate cache somehow)
 * Put the big logo behind the body
 * Make a loading animation if necessary
 * Coffeescript/Stylus/YAML?
+
+## New Algorithm:
+
+* Get the list of slides from the server.
+* If there is no slide, show the default diagnostics page.
+* Change them one by one.
+* Let the browser cache handle the load, just keep two at a time.
+* If an error happens show the error & diagnostics page.
+* Sync the time with the server if the down counter is implemented.
+
+## diagnostics page
+
+* What went wrong (and how to solve it)
+* Serve URL
+* Resolution
+* Some basic info about the important features of the browser that we're using
+* Some performance benchmark of the browser can be nice
+* An indicator for the next retry to see if the error is solved
+* Branding and logo
+
+## Show proper messages on screen subtly and professionally:
+
+* When the server is unreachable (maybe temporarily)
+* When the image cannot be loaded for some reason (bad format, too big, etc)
+* When an internal error happens for some reason (have a built-in console.log using DOM) and listen to window.onerror()
+* When there is no image on the server
+
+## Diagnostics mode:
+
+* Server asks all clients to show ID/IP, resolution, server url, etc.
+
+## Interactivity:
+
+* Go to next slide on a click of a mouse
 
 # Directory structure
 
